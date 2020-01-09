@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users
   
-  resources :pictures, only: [:index, :create]
+  resources :pictures, only: [:index, :create, :show]
   resources :animate_mos, only: [:create]
   
   mount ActionCable.server => '/cable'

@@ -4,6 +4,15 @@ class PicturesController < ApplicationController
         render json: pictures
     end
 
+    def show
+        picture = Picture.find(params[:id])
+        if picture
+            render json: picture
+        else
+            render json: {error: "Invalid Request", details: "No picture with this id"}
+        end
+    end
+
     def create
         picture = Picture.new(picture_params)
         if picture.save
