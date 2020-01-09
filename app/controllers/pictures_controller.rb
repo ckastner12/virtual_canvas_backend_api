@@ -1,6 +1,6 @@
-class PictureController < ApplicationController
+class PicturesController < ApplicationController
     def index
-        pictures = pictures.all
+        pictures = Picture.all
         render json: pictures
     end
 
@@ -10,7 +10,7 @@ class PictureController < ApplicationController
             serialized_data =  ActiveModelSerializers::Adapter::Json.new(
                 PictureSerializer.new(picture)
             ).serializable_hash
-            PictureChannel.broadcast_to 'pictures_channel', serialized_data
+            PicturesChannel.broadcast_to 'pictures_channel', serialized_data
             head :ok
         end
     end

@@ -6,9 +6,12 @@ class AnimateMosController < ApplicationController
             serialized_data = ActiveModelSerializers::Adapter::Json.new(
                 AnimateMoSerializer.new(animate_mo)
             ).serializable_hash
-            AnimateMosChannel.broadcast_to picture, serialized_data
-            head :ok
+            ActionCable.server.broadcast("pictures_channel_#{picture.id}", serialized_data)
         end
+    end
+
+    def animate
+        
     end
 
     private
