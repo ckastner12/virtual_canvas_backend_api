@@ -7,11 +7,13 @@ class PicturesController < ApplicationController
     def create
         picture = Picture.new(picture_params)
         if picture.save
-            serialized_data =  ActiveModelSerializers::Adapter::Json.new(
-                PictureSerializer.new(picture)
-            ).serializable_hash
-            PicturesChannel.broadcast_to 'pictures_channel', serialized_data
-            head :ok
+            # Unsure whether to keep this as the list of canvases can be obtained using an HTTP request, no reason to clutter the app with more sockets than necessary
+            # serialized_data =  ActiveModelSerializers::Adapter::Json.new(
+            #     PictureSerializer.new(picture)
+            # ).serializable_hash
+            # ActionCable.server.broadcast "pictures_channel_#{picture.id}", serialized_data
+            # head :ok
+            render json: picture
         end
     end
 
