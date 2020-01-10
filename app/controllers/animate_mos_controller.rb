@@ -8,7 +8,6 @@ class AnimateMosController < ApplicationController
                 AnimateMoSerializer.new(animate_mo)
             ).serializable_hash
             ActionCable.server.broadcast("pictures_channel_#{picture.id}", serialized_data)
-            head_ok
         end
     end
 
