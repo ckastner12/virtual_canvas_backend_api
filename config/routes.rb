@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
+    resources :bookmarks
+  end 
   
   resources :pictures, only: [:index, :create, :show]
   resources :animate_mos, only: [:create]

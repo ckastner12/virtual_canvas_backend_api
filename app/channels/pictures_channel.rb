@@ -9,6 +9,6 @@ class PicturesChannel < ApplicationCable::Channel
   end
 
   def receive(data)
-    ActionCable.server.broadcast "pictures_channel_#{data.canvas_id}", data
+    ActionCable.server.broadcast("pictures_channel_#{data['canvas_id']}", data)
   end
 end
