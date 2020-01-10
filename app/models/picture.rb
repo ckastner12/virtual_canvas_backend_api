@@ -1,3 +1,3 @@
 class Picture < ApplicationRecord
-    has_many :animate_mos
+    has_many :animate_mos, dependent: :destroy
 end
