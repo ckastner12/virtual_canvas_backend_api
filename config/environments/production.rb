@@ -104,5 +104,5 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   #For a secure web socket connection
-  config.web_socket_server_url = "wss://intense-harbor-90528.herokuapp.com/cable" 
+  config.web_socket_server_url = "ws://intense-harbor-90528.herokuapp.com/cable" 
 end
