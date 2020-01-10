@@ -8,7 +8,7 @@ class PicturesChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def recieve(data)
+  def receive(data)
     ActionCable.server.broadcast "pictures_channel_#{data.canvas_id}", data
   end
 end
