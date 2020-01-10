@@ -102,4 +102,7 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  #For a secure web socket connection
+  config.web_socket_server_url = "wss://intense-harbor-90528.herokuapp.com/cable" 
 end
