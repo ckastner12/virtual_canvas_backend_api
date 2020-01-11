@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post '/login', to: 'users#login'
+  post '/users/login', to: 'users#login'
   resources :users do
     resources :bookmarks
   end 
