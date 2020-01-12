@@ -1,3 +1,5 @@
 class BookmarkSerializer < ActiveModel::Serializer
-  attributes :id, :picture_id
+  attributes :id, :picture
+  belongs_to :picture
+  belongs_to :user
 end
