@@ -11,9 +11,18 @@ class AnimateMosController < ApplicationController
         end
     end
 
+    def update
+        animation = AnimateMo.find(params[:id])
+        if animation.update(animate_mo_params)
+            render json: animation
+        else
+            render json: {error: "Invalid Update", message: ""}
+        end
+    end
+
     private
 
     def animate_mo_params
-        params.require(:animate_mo).permit(:picture_id, :user_id, :loc_x, :loc_y)
+        params.require(:animate_mo).permit(:picture_id, :user_id, :shape, :loc_x, :loc_y)
     end
 end
