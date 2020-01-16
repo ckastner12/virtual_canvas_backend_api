@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_223103) do
+ActiveRecord::Schema.define(version: 2020_01_10_172504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,16 @@ ActiveRecord::Schema.define(version: 2020_01_13_223103) do
   create_table "animate_mos", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "picture_id", null: false
-    t.integer "loc_x"
-    t.integer "loc_y"
+    t.string "color"
+    t.string "shape"
+    t.integer "radius_1"
+    t.integer "radius_2"
+    t.integer "count"
+    t.integer "duration"
+    t.integer "angle"
+    t.integer "stroke_width"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "shape"
     t.index ["picture_id"], name: "index_animate_mos_on_picture_id"
     t.index ["user_id"], name: "index_animate_mos_on_user_id"
   end

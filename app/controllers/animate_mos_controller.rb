@@ -6,7 +6,7 @@ class AnimateMosController < ApplicationController
             serialized_data = ActiveModelSerializers::Adapter::Json.new(
                 AnimateMoSerializer.new(animate_mo)
             ).serializable_hash
-            ActionCable.server.broadcast("pictures_channel_#{picture.id}", {method: "CHANNEL_POST", animation: serialized_data})
+            ActionCable.server.broadcast("pictures_channel_#{picture.id}", {type: "CHANNEL_POST", animation: serialized_data})
             render json: animate_mo
         end
     end
@@ -18,7 +18,7 @@ class AnimateMosController < ApplicationController
             serialized_data = ActiveModelSerializers::Adapter::Json.new(
                 AnimateMoSerializer.new(animation)
             ).serializable_hash
-            ActionCable.server.broadcast("pictures_channel_#{picture.id}", {method: "CHANNEL_PATCH", animation: serialized_data})
+            ActionCable.server.broadcast("pictures_channel_#{picture.id}", {type: "CHANNEL_PATCH", animation: serialized_data})
             render json: animation
         else
             render json: {error: "Invalid Update", message: ""}
@@ -28,6 +28,6 @@ class AnimateMosController < ApplicationController
     private
 
     def animate_mo_params
-        params.require(:animate_mo).permit(:picture_id, :user_id, :shape, :loc_x, :loc_y)
+        params.require(:animate_mo).permit(:picture_id, :user_id, :shape, :color, :radius_1, :radius_2, :count, :duration, :angle, :stroke_width)
     end
 end
