@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(version: 2020_01_10_172504) do
   create_table "animate_mos", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "picture_id", null: false
-    t.string "color"
-    t.string "shape"
-    t.integer "radius_1"
-    t.integer "radius_2"
-    t.integer "count"
-    t.integer "duration"
-    t.integer "angle"
-    t.integer "stroke_width"
+    t.string "color", default: "red"
+    t.string "shape", default: "circle"
+    t.integer "radius_1", default: 0
+    t.integer "radius_2", default: 100
+    t.integer "count", default: 2
+    t.integer "duration", default: 1000
+    t.integer "angle", default: 0
+    t.integer "stroke_width", default: 5
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["picture_id"], name: "index_animate_mos_on_picture_id"
