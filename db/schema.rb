@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_172504) do
+ActiveRecord::Schema.define(version: 2020_01_17_214047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,24 @@ ActiveRecord::Schema.define(version: 2020_01_10_172504) do
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
+  create_table "p5_shapes", force: :cascade do |t|
+    t.bigint "picture_id", null: false
+    t.bigint "user_id", null: false
+    t.string "fill"
+    t.integer "frequency"
+    t.string "stroke"
+    t.integer "type"
+    t.integer "width", default: 5
+    t.integer "height", default: 5
+    t.integer "amount", default: 1
+    t.integer "orbit", default: 0
+    t.integer "spin", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["picture_id"], name: "index_p5_shapes_on_picture_id"
+    t.index ["user_id"], name: "index_p5_shapes_on_user_id"
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.string "title"
     t.integer "user_id"
@@ -59,4 +77,6 @@ ActiveRecord::Schema.define(version: 2020_01_10_172504) do
   add_foreign_key "animate_mos", "users"
   add_foreign_key "bookmarks", "pictures"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "p5_shapes", "pictures"
+  add_foreign_key "p5_shapes", "users"
 end
