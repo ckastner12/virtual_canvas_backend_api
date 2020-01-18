@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :pictures, only: [:index, :create, :show]
   resources :animate_mos, only: [:create, :update]
+  resources :p5_shapes, only: [:create, :update]
   
   mount ActionCable.server => '/cable'
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
