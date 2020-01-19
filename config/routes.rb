@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   end 
 
   resources :pictures, only: [:index, :create, :show]
-  resources :animate_mos, only: [:create, :update]
-  resources :p5_shapes, only: [:create, :update]
+  resources :animate_mos, only: [:create, :update, :destroy]
+  resources :p5_shapes, only: [:create, :update, :destroy]
   
   mount ActionCable.server => '/cable'
   

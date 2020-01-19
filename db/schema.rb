@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_01_17_214047) do
     t.string "fill"
     t.integer "frequency"
     t.string "stroke"
-    t.integer "type"
+    t.integer "shape"
     t.integer "width", default: 5
     t.integer "height", default: 5
     t.integer "amount", default: 1

@@ -6,7 +6,7 @@ class CreateP5Shapes < ActiveRecord::Migration[6.0]
       t.string :fill
       t.integer :frequency
       t.string :stroke
-      t.integer :type
+      t.integer :shape
       t.integer :width, default: 5
       t.integer :height, default: 5
       t.integer :amount, default: 1

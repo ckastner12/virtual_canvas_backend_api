@@ -24,6 +24,11 @@ class P5ShapesController < ApplicationController
         end
     end
 
+    def destroy 
+        p5_shape = P5Shape.find(params[:id])
+        byebug()
+    end
+
     private
     def p5_shape_params
         params.require(:p5_shape).permit(:picture_id, :user_id, :fill, :frequency, :stroke, :type, :width, :height, :amount, :orbit, :spin)
