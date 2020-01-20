@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2020_01_17_214047) do
   create_table "p5_shapes", force: :cascade do |t|
     t.bigint "picture_id", null: false
     t.bigint "user_id", null: false
-    t.string "fill"
+    t.string "fill", default: "0,0,0"
     t.integer "frequency"
-    t.string "stroke"
+    t.string "stroke", default: "0,0,0"
     t.integer "shape"
     t.integer "width", default: 5
     t.integer "height", default: 5
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_01_17_214047) do
 
   create_table "pictures", force: :cascade do |t|
     t.string "title"
+    t.string "background", default: "0,0,0"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

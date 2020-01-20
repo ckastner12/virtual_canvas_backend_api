@@ -3,9 +3,9 @@ class CreateP5Shapes < ActiveRecord::Migration[6.0]
     create_table :p5_shapes do |t|
       t.references :picture, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
-      t.string :fill
+      t.string :fill, default: '0,0,0'
       t.integer :frequency
-      t.string :stroke
+      t.string :stroke, default: '0,0,0'
       t.integer :shape
       t.integer :width, default: 5
       t.integer :height, default: 5
