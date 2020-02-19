@@ -35,9 +35,15 @@ class PicturesController < ApplicationController
         end
     end
 
+    def destroy
+        picture = Picture.find(params[:id])
+        picture.destroy()
+        render json: {message: "Successful"}
+    end
+
     private
     def picture_params
-        params.require(:picture).permit(:title, :user_id, :background)
+        params.require(:picture).permit(:title, :user_id, :background, :mid_mapping_1, :mid_mapping_2, :treble_mapping_1, :treble_mapping_2, :bass_mapping_1, :bass_mapping_2)
     end
 end
 

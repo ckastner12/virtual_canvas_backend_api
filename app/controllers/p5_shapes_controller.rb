@@ -34,6 +34,6 @@ class P5ShapesController < ApplicationController
 
     private
     def p5_shape_params
-        params.require(:p5_shape).permit(:picture_id, :user_id, :fill, :frequency, :stroke, :shape, :width, :height, :amount, :orbit, :spin)
+        params.require(:p5_shape).permit(:picture_id, :user_id, :fill, :frequency, :stroke, :shape, :width, :height, :amount, :orbit, :spin, :stagger_radius, :stagger_place)
     end
 end

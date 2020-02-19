@@ -12,6 +12,8 @@ class CreateP5Shapes < ActiveRecord::Migration[6.0]
       t.integer :amount, default: 1
       t.integer :orbit, default: 0
       t.integer :spin, default: 0
+      t.integer :stagger_radius, default: 0
+      t.integer :stagger_place, default: 0
 
       t.timestamps
     end

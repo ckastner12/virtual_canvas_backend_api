@@ -23,9 +23,10 @@ ActiveRecord::Schema.define(version: 2020_01_17_214047) do
     t.integer "radius_1", default: 0
     t.integer "radius_2", default: 100
     t.integer "count", default: 2
-    t.integer "duration", default: 1000
+    t.integer "duration", default: 100
     t.integer "angle", default: 0
     t.integer "stroke_width", default: 5
+    t.integer "stagger", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["picture_id"], name: "index_animate_mos_on_picture_id"
@@ -53,6 +54,8 @@ ActiveRecord::Schema.define(version: 2020_01_17_214047) do
     t.integer "amount", default: 1
     t.integer "orbit", default: 0
     t.integer "spin", default: 0
+    t.integer "stagger_radius", default: 0
+    t.integer "stagger_place", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["picture_id"], name: "index_p5_shapes_on_picture_id"
@@ -63,6 +66,12 @@ ActiveRecord::Schema.define(version: 2020_01_17_214047) do
     t.string "title"
     t.string "background", default: "0,0,0"
     t.integer "user_id"
+    t.integer "mid_mapping_1", default: -100
+    t.integer "mid_mapping_2", default: 100
+    t.integer "treble_mapping_1", default: 100
+    t.integer "treble_mapping_2", default: 250
+    t.integer "bass_mapping_1", default: 50
+    t.integer "bass_mapping_2", default: 200
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
