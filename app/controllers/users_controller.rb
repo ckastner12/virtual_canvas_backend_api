@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
     def login
-        user = User.find_by(user_params)
-        if user
+        user = User.find_by(email: user_params[:email])
+        if user and user.authenticate(user_params[:password])
             render json: user
         else
-            render json: {error: "No user found", details: "No email matching"}
+            render json: {error: "No user with that username/password", details: "No email matching"}
         end
     end
 
@@ -27,6 +27,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :email)
+        params.require(:user).permit(:name, :email, :password)
     end
 end
