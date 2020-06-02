@@ -1,8 +1,8 @@
-# Kangaroo-Hangout-Backend-API
+# Virtual-Canvas-Backend-API
 
-Flatiron School Module 4 Project Backend by [Christian Kastner](https://github.com/ckastner12)
+Flatiron School Module 5 Project Backend by [Christian Kastner](https://github.com/ckastner12)
 
-Kangaroo Hangout is an app designed to allow users to plan events that contain several activities supplied by the Google Places API. The users can create and login to profiles and create planned events that they want to schedule. Wanna find the closest thai food restaurant to your ballroom dancing class? It's easy with kangaroo hangout
+The backend for virtual canvas built with Ruby on Rails. Uses ActionCable for websocketing to enable canvas connections with multiple clients. This persists all the animation objects and connects them with their respective canvases and users. Creates user, canvas, bookmarked canvas, and animation end points.
 
 ## Installation
 
