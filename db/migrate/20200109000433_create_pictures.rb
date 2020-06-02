@@ -2,7 +2,7 @@ class CreatePictures < ActiveRecord::Migration[6.0]
   def change
     create_table :pictures do |t|
       t.string :title
-      t.string :background, default: "0,0,0"
+      t.string :background, default: "255,255,255"
       t.integer :user_id
       t.integer :mid_mapping_1, default: -100
       t.integer :mid_mapping_2, default: 100
